@@ -1,0 +1,11 @@
+<!-- EMAIL SENT TO EMPLOYEE UPON FORM SUBMISSION -->
+{% autoescape off %}
+Hello {{ user.name }},
+
+You have submitted a request for access to the Library of Life Science's Data Center Collocation Center. A confirmation email has been sent to your manager, {{ user.manager }} at {{ user.man_email }}. Once your manager has approved your request, please allow up to 5 business days for your request to be processed.
+
+Thank you,
+University of Massachusetts Amherst IT
+Reference tracking number:{{ user.tracker }}
+
+{% endautoescape %}

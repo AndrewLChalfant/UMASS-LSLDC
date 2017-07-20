@@ -1,0 +1,38 @@
+{% load staticfiles %}
+{% csrf_token %}
+
+<!-- HOME PAGE FOR EMPLOYEE REQUESTS-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>LSLDC COLO Access Request App | UMass Amherst</title>
+	<link rel="icon"  href="http://www.umass.edu/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
+</head>
+
+<body>
+<div class="page">
+<h1> LSLDC COLO </h1>
+<h2> Access Request App  </h2>
+<form action="" method="post">{% csrf_token %}
+
+	{{ form.as_p }}
+	<div class="form-actions">
+		<button class="button button1" type="submit"> Submit </button>
+		</div>
+</form>
+</div>
+
+<!-- DEVELOPER DIRECTORY
+<div class="page">
+<a href="http://127.0.0.1:8000">Home</a><br>
+<a href="http://127.0.0.1:8000/admin">Admin</a><br>
+<a href="http://127.0.0.1:8000/colo">COLO</a><br>
+<a href= "http://127.0.0.1:8000/supervisor_confirm/">Supervisor</a><br>
+<a href="http://127.0.0.1:8000/supervisor_complete/">Supervisor Complete</a><br>
+<a href="http://127.0.0.1:8000/employee_complete/">Employee Complete</a><br>
+</div>
+-->
+</body>
+</html>

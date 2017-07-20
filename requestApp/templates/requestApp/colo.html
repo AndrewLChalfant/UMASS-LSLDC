@@ -1,0 +1,105 @@
+{% load static %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>LSLDC COLO Access Request App | UMass Amherst</title>
+	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="{% static "requestApp/jquery.js" %}"></script>
+
+</head>
+
+<body>
+<div class="data">
+<h1> LSLDC COLO Pending Request App</h1>
+
+<!-- DISPLAY TABLE WITH DATABASE PENDING USERS -->
+{% if requests %}
+<div id="table">
+	<table>
+	<tr>
+		<th> Employee Name </th>
+		<th> Employee Email</th>
+		<th> Employee Phone </th>
+		<th> Reason </th>
+		<th> Employee UCARD </th>
+		<th> Manager </th>
+		<th> Manager Email </th>
+		<th> Employee Department </th>
+		<th> Request Time </th>
+		<th> Tracking Number </th>
+		<th><strong>Approve Request </strong></th>
+
+	{% for COLOUser in requests %}
+	<tr>
+		{% if not COLOUser.COLO_approved %}
+			<td> {{ COLOUser.name }} </td>
+			<td> {{ COLOUser.email }} </td>
+			<td> {{ COLOUser.phone }} </td>
+			<td> {{ COLOUser.reason }} </td>
+			<td> {{ COLOUser.UCard_ID }} </td>
+			<td> {{ COLOUser.manager }} </td>
+			<td> {{ COLOUser.man_email }} </td>
+			<td> {{ COLOUser.dep }} </td>
+			<td> {{ COLOUser.time }} </td>
+			<td> {{ COLOUser.tracker }} </td>
+			<td> <button id="export"> APPROVE REQUEST </button></td>
+		{% endif %}
+	{% endfor %}
+	</table>
+	{% else %}
+		<h1> No pending requests </h1>
+	{% endif %}
+</div>
+
+<!-- DISPLAY TABLE WITH DATABASE APPROVED USERS -->
+<h1> LSLDC COLO Approved Requests</h1>
+<div id="table2">
+<table>
+<tr>
+	<th> Employee Name </th>
+	<th> Employee Email</th>
+	<th> Employee Phone </th>
+	<th> Reason </th>
+	<th> Employee UCARD </th>
+	<th> Manager </th>
+	<th> Manager Email </th>
+	<th> Department </th>
+	<th> Request Time </th>
+	<th> Tracking Number </th>
+
+{% for COLOUser in requests %}
+<tr>
+	{% if COLOUser.COLO_approved %}
+		<td> {{ COLOUser.name }} </td>
+		<td> {{ COLOUser.email }} </td>
+		<td> {{ COLOUser.phone }} </td>
+		<td> {{ COLOUser.reason }} </td>
+		<td> {{ COLOUser.UCard_ID}} </td>
+		<td> {{ COLOUser.manager }} </td>
+		<td> {{ COLOUser.man_email }} </td>
+		<td> {{ COLOUser.dep }} </td>
+		<td> {{ COLOUser.time }} </td>
+		<td> {{ COLOUser.tracker }} </td>
+	{% endif %}
+{% endfor %}
+</table>
+</div>
+</div>
+
+</div>
+<!-- FOOTER FOR COLO MANAGER OPTIONS -->
+<div class="page">
+<center>
+<button id="btnExport"> Export Pending Requests </button>
+<button id="btnExportApproved"> Export Approved Requests </button>
+
+  <form method="post">
+    {{ form.as_p }}
+  </form>
+ - Log Out - Recent Requests </center>
+</div>
+</body>
+</html>

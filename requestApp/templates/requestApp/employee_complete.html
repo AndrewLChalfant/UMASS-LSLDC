@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+<!-- CONFIRMATION PAGE FOR POST FORM SUBMISSION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>LSLDC COLO Access Request App | UMass Amherst</title>
+	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
+</head>
+
+<body>
+<div class="page">
+<h1> Employee Request Complete </h1>
+<h2>Hello {{ user.name }}, </h2>
+<p> Your request has been submitted. Once your manager confirms your request, an LSLDC
+Ops Manager will process your request. We have sent an email to {{ user.email }} with more information on how to proceed.<br><br>
+If you have additional questions, please contact: 
+</p>
+</div>
+</body>
+</html>
