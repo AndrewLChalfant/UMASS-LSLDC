@@ -7,9 +7,8 @@ from django.views.generic import TemplateView
 urlpatterns= [
     url(r'^$', views.home, name='home'),
     url(r'^employee_complete/$', views.complete, name='complete'),
-    url(r'^supervisor_confirm/$', views.manager, name='supervisor'),
-	url(r'^supervisor_complete/$', views.supervisor_complete, name='supervisor_approved'),
-    url(r'^employee_verify/$', views.employee_info, name='incomplete'),
+	url(r'^manager_complete/$', views.manager_complete, name='manager_approved'),
     url(r'^colo/$', views.COLO, name= 'colo'),
     url(r'^login/$', views.login, name= 'login'),
+url(r'^manager_confirm/(?P<token>[0-9A-Za-z]{1,3}-[0-9A-Za-z]{1,20})/(?P<uuid4>[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12})', views.manager, name='manager'),
     ]

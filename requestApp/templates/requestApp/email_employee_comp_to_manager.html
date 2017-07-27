@@ -1,0 +1,15 @@
+{% autoescape off %}
+Hello {{ user.manager }},
+
+Your employee, {{ user.name }} submitted a request for access to the University of Massachusetts Amherst Life Science Laboratory Data Center Collocation Center on {{ user.time }} 
+
+To approve this employee's request, please visit this link:
+
+http://127.0.0.1:8000{% url 'manager' token=token uuid4=user.tracker %}
+
+If you are not the manager of {{ user.name }} or do not wish to approve this request, please disregard this email. 
+ 
+Thank you,
+University of Massachusetts Amherst IT
+Reference tracking number:{{ user.tracker }}
+{% endautoescape %}

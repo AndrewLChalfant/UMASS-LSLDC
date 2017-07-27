@@ -1,0 +1,9 @@
+{% autoescape off %}
+Hello {{ user.manager }},
+
+You have approved {{ user.name }} for access to the Library of Life Science's Data Center. LSLSDC has been notified of your request.
+
+Thank you,
+University of Massachusetts Amherst IT
+Reference tracking number:{{ user.tracker }}
+{% endautoescape %}

@@ -10,12 +10,13 @@
 
 <body>
 <div class="page">
+<h1>UMass Amherst LSLDC COLO Access Request App</h1>
 <h1> Employee Request Complete </h1>
 <h2>Hello {{ user.name }}, </h2>
-<p> Your request has been submitted. Once your manager confirms your request, an LSLDC
-Ops Manager will process your request. We have sent an email to {{ user.email }} with more information on how to proceed.<br><br>
-If you have additional questions, please contact: 
+<p> Your request has been submitted. Once your manager <i>({{user.manager }} - {{ user.man_email }})</i> confirms your request, an LSLDC Ops Manager will review your submission. We have sent an email to {{ user.email }} with more information on how to proceed.<br><br>
+<i>If you have additional questions, please contact us at LSLDC-COLO@umass.edu </i>
 </p>
 </div>
+
 </body>
 </html>

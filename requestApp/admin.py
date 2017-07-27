@@ -59,8 +59,9 @@ def export_xls(modeladmin, request, queryset):
 		(u"UCard_ID", 3000),
 		(u"Manager Name", 4000),
 		(u"Manager Email", 5000),
-		(u"Time Of Submission", 5000),
-		(u"Supervisor Approval", 5000),
+		#can't subtract offset-naive and offset-aware datetimes error
+		#(u"Time Of Submission", 5000),
+		(u"Manager Approval", 5000),
 		(u"COLO Approval", 5000),
 
     ]
@@ -86,6 +87,7 @@ def export_xls(modeladmin, request, queryset):
             obj.UCard_ID,
             obj.manager,
             obj.man_email,
+            #obj.time,
             obj.man_approved,
             obj.COLO_approved,
         ]
@@ -117,7 +119,7 @@ def export_xlsx(modeladmin, request, queryset):
 		(u"Manager Name", 30),
 		(u"Manager Email", 30),
 		(u"Time Of Submission", 20),
-		(u"Supervisor Approval", 18),
+		(u"Manager Approval", 18),
 		(u"COLO Approval", 18),
     ]
 

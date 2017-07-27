@@ -1,0 +1,59 @@
+{% load staticfiles %}
+{% csrf_token %}
+
+<!-- SUPERVISOR PAGE SENT TO EMAIL TO CONFIRM EMPLOYEE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>>LSLDC COLO Access Request App | UMass Amherst</title>
+	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
+	<style>
+	table, th, td {
+	padding-left: 20px;
+	font-size: 13px;
+	}	
+	
+	div.check {
+		bottom: 5px;
+		padding-left: 50px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="page">
+<h1>UMass Amherst LSLDC COLO Access Request App</h1>
+<h2> Manager Confirmation Site </h2>
+<h2> You are approving: <strong>{{ user.name }} </strong> </h2> 
+<p> <center><i>Please verify the following information</i></p>
+<hr>
+
+<table>
+<tr><td>Employee Name: <td>{{ user.name }}</tr>
+<tr><td>Employee Email: <td>{{ user.email }}</tr>
+<tr><td>Reason for Access: <td>{{ user.reason }}</tr>
+<tr><td>Employee Manager: <td>{{ user.manager }}</tr>
+<tr><td>Manager Email: <td>{{ user.man_email }} </tr>
+</table>
+</center>
+<hr>
+
+<div class='check'>
+
+<form action="" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+</div>
+
+<div class="form-actions">
+<center><button class="button button1" type="submit"> Approve </button></center>
+</div>
+<p> Please contact LSLDC@umass.edu if any of the above information is incorrect.</p>
+</div>
+
+<div class="footer">
+This site is maintained by the <a href="http://umass.edu/it/">UMass Amherst Information Technology</a>.<br/>
+Copyright &copy; <script>document.write( (new Date()).getFullYear() );</script>. University of Massachusetts Amherst. <a href="http://umass.edu/umhome/policies.html">Site Policies</a>
+</div>
+</body>
+</html>

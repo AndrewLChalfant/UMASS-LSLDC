@@ -1,0 +1,133 @@
+html, body {
+     height: 80%;
+     }
+
+body {
+    background-color: #881c1c;
+    background: -webkit-linear-gradient(#970000, #881c1c); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#970000, #881c1c); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#970000, #881c1c);/* For Firefox 3.6 to 15 */
+    background: linear-gradient(#970000, #881c1c);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin: auto;
+    font-family: "Arial"
+}
+
+h1 {
+	font-size: 30px;
+	text-align: center;
+}
+	
+h2 {
+	font-size: 20px;
+	text-align: center;
+}	
+	
+p {
+	font-size: 15px; 
+	color: #1B1B1B;
+}
+
+input, dropdown {
+	float: right;
+	padding-right: 0px;
+	padding-top: 5px;
+	}
+
+input:focus {
+	background-color: light grey;
+	}
+	
+a:link {
+  color: #D6D6D6;
+}
+
+a:visited {
+    color: #7E7E7E;
+}
+
+a:hover {
+    color: #7E7E7E;
+}
+
+a:active {
+    color: white;
+}
+	
+div.footer {
+	padding-top: 10%;
+	text-align: center;
+	color: #D6D6D6;
+	font-size: 15px;
+	}
+		
+div.page {
+	background-color: #F3F3F3;
+    background: -webkit-linear-gradient(#FFFFFF, #DDDDDD); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FFFFFF, #DDDDDD); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FFFFFF, #DDDDDD);/* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FFFFFF, #DDDDDD);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 400px;
+	border-radius: 10px;
+	border: 2px solid black;
+	box-shadow:1px 50px 50px #5E0000;
+	}
+	
+div.data {
+	background-color: #F3F3F3;
+    background: -webkit-linear-gradient(#FFFFFF, #DDDDDD); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FFFFFF, #DDDDDD); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FFFFFF, #DDDDDD);/* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FFFFFF, #DDDDDD);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	padding: 10px;
+	margin: auto;
+	width: 800px;
+	border-radius: 10px;
+	border: 3px solid black;
+	box-shadow:1px 50px 50px #5E0000;
+
+	}
+
+.button1 {
+	position: relative;
+	bottom: -5px;
+	font-size: 20px;
+	border: 2px solid #F3F3F3;
+	border-radius: 5px;
+	width: 300px;
+	height: 50px;
+	background-color: #990000;
+	color: white;
+	}
+	
+.button1:hover {
+    background-color: #5E0000;
+}
+
+div.table {
+    width: 100%;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 10px;
+    background-color: white;
+}
+
+th, td {
+    padding: 2px;
+    text-align: left;
+    }
+
