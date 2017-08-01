@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
 import uuid
 from datetime import datetime
+#EMPLOYEES REQUESTING ACCESS WILL HAVE THEIR INFORMATION STORED AS A 'COLOUSER' Model
 
 #COLO CONSTRUCTOR
 class COLOUserManager(models.Manager):
@@ -22,12 +23,14 @@ class COLOUserManager(models.Manager):
 #MODEL TO STORE USER DATA
 class COLOUser(models.Model):
 	objects = COLOUserManager()
-
+	
+	#FIELDS NOT EDITABLE BY USER 
 	man_approved= models.BooleanField('Manager Approved', blank= 'False', default='False')
 	COLO_approved= models.BooleanField('COLO Manager Approved', default='False')
 	time= models.DateTimeField("Timestamp", auto_now_add= True, editable= 'False')
 	tracker= models.UUIDField(default= uuid.uuid4, primary_key= True, unique= True)
 	
+	#FIELDS EDITABLE BY USER
 	name= models.CharField('Employee Name', max_length=20)
 	email= models.EmailField('Employee Email', max_length=25)
 	phone= models.PositiveIntegerField('Employee Phone Number')
@@ -45,7 +48,3 @@ class COLOUser(models.Model):
 	
 	def __str__(self):
 		return self.name
-
-	def approve_colo(self):
-		COLO_approved= True
-		return COLO_approved

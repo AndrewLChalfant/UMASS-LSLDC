@@ -8,11 +8,10 @@ from django.template.loader import render_to_string
 
 #IMPORT MODELS AND FORMS
 from requestApp.models import COLOUser
-from requestApp.forms import PostForm, ApprovalForm, SearchForm, COLOApprovalForm, COLODeletionForm
+from requestApp.forms import PostForm, ApprovalForm, COLOApprovalForm, COLODeletionForm
 from requestApp.tokens import account_activation_token
 
-
-#REQUIRE EMPLOYEE FORM FIELDS AND SEND TWO EMAILS
+#REQUIRE EMPLOYEE FORM FIELDS AND SEND EMAILS TO EMPLOYEE AND MANAGER
 def home(request):
 	if request.method == 'GET':
 		form= PostForm()
@@ -23,7 +22,8 @@ def home(request):
 			#CREATE NEW MODEL
 			newUser= form.save()
 			#PASS EMPLOYEE FORM DATA TO BE COMPOSED AS EMAIL TO HTML OUTLINE
-			employee_content= render_to_string('requestApp/email_employee_complete.html', {
+			employee_content= render_to_string('requestApp/email_employee_complete.html',
+			{
 				'user': newUser,
 			})
 							
@@ -57,15 +57,16 @@ def home(request):
 			
 	return render(request, 'requestApp/request_home.html', {'form': form})
 
-#SITE TO CONFIRM EMPLOYEE FORM COMPLETED
+#SITE TO CONFIRM EMPLOYEE FORM COMPLETED, REACHABLE VIA MANAGER'S EMAIL
 def complete(request):
 	return render(request, 'requestApp/employee_complete.html')
 	
-#SITE FOR SUPERVISOR TO CONFIRM EMPLOYERS REQUEST	
+#SITE FOR MANAGER TO CONFIRM EMPLOYERS REQUEST	
 def manager(request, uuid4, token):
 	user= get_object_or_404(COLOUser, pk= uuid4)
 	if request.method == 'GET':
 		form= ApprovalForm()
+		
 	else:
 		form= ApprovalForm(request.POST)
 		#hopefully approve
@@ -101,11 +102,11 @@ def manager(request, uuid4, token):
 		return redirect('manager_approved')
 	return render(request, 'requestApp/manager_confirm.html', {'form': form, 'user':user})
 	
-#PAGE TO CONFIRM MANAGER FORM COMPLTED
+#PAGE TO CONFIRM MANAGER FORM COMPLETED
 def manager_complete(request):
 	return render(request, 'requestApp/manager_complete.html')
 
-#COLOMANAGER
+#LSLDC OPS MANAGER CONTROL PANNEL SITE
 def COLO(request):
 	if request.method == 'GET':
 		form= COLOApprovalForm()
@@ -119,7 +120,7 @@ def COLO(request):
 				user= get_object_or_404(COLOUser, pk= uuid4)
 				user.COLO_approved= 'True'
 				user.save()	
-			
+
 				colo_content= render_to_string('requestApp/email_colo_complete.html', {
 				'user': user,
 				})
@@ -139,7 +140,7 @@ def COLO(request):
 				user= get_object_or_404(COLOUser, pk= uuid4).delete()
 		return redirect('colo')
 
-	#RENDER TABLES
+	#EXPORT LISTS TO BE USED IN COLO TABLES
 	request_list= list(COLOUser.objects.all())
 
 	if COLOUser.objects.exists():
@@ -152,23 +153,3 @@ def COLO(request):
 		approved_requests= True
 			
 	return render(request, 'requestApp/colo.html', {'requests': request_list, 'new_requests': half_list, 'form':form, 'form2': form2, 'approved_requests': approved_requests})
-
-#NOT FUNCTIONING	
-def login(request):
-	username= 'error'
-	if request.method == "GET":
-		form= LoginForm()
-		
-	else:
-		form= LoginForm(request.POST)
-		if form.is_valid():
-			username= form.cleaned_data['username']
-			password= form.cleaned_data['password']
-			user= authenticate(request, username= username, password= password)
-			if user:
-				login(request, user)
-				return HttpResponseRedirectt('/colo/')
-			else:
-				return HttpResponse('False')
-				
-	return render(request, 'requestApp/login.html', {'form': form})

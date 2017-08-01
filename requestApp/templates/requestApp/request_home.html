@@ -9,8 +9,9 @@
 	<title>LSLDC COLO Access Request App | UMass Amherst</title>
 	<link rel="icon"  href="http://www.umass.edu/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
-	<style>
-	
+<style>	
+
+/* UCARD HELP STYLE */
 .tooltip {
     position: absolute;
     top: 280px;
@@ -24,24 +25,22 @@
     line-height: 26px;
     cursor: default;
 }
- 
-.tooltip:before{
+
+.tooltip:before {
     content:'?';
     font-weight: bold;
     color: white;
 }
 
-.tooltip:hover{
+.tooltip:hover {
 	background-color: #881c1c;
-	}
+}
 	 
-.tooltip:hover p, .tooltip-h:hover p{
+.tooltip:hover p, .tooltip-h:hover p {
     display:block;
     transform-origin: 100% 0%;
- 
     -webkit-animation: fadeIn 0.3s ease-in-out;
     animation: fadeIn 0.3s ease-in-out;
- 
 }
  
 .tooltip p, .tooltip-h p{    
@@ -102,39 +101,27 @@
 </head>
 
 <body>
-
 <div class="page">
-
 <h1>UMass Amherst LSLDC COLO Access Request App</h1>
-<form action="" method="post">{% csrf_token %}
 
+<!-- EMPLOYEE SUBMISSION FIELDS -->
+<form action="" method="post">
+	{% csrf_token %}
 	{{ form.as_p }}
 	<center><div class="form-actions">
-		<button class="button button1" type="submit"> Submit </button>
-		</div></center>
+	<button class="button button1" type="submit"> Submit </button>
+	</div></center>
 </form>
+
 <div class="tooltip">
 <p><image src="{% static 'requestApp/UCardSelected.png'%}" style="width:350px;height:200px;"></p>
 </div>
 </div>
 
 <div class="footer">
-This site is maintained by the <a href="http:/www.it.umass.edu">UMass Amherst Information Technology</a>.<br/>
+This site is maintained by the <a href="http://www.it.umass.edu">UMass Amherst Information Technology</a>.<br/>
 Copyright &copy; <script>document.write( (new Date()).getFullYear() );</script>. University of Massachusetts Amherst. <a href="http://umass.edu/umhome/policies.html">Site Policies</a>
-
-
 </div>
 
-
-<!--DEVELOPER DIRECTORY
-<div class="page">
-<a href="http://127.0.0.1:8000">Home</a><br>
-<a href="http://127.0.0.1:8000/admin">Admin</a><br>
-<a href="http://127.0.0.1:8000/colo">COLO</a><br>
-<a href= "http://127.0.0.1:8000/manager_confirm/4o2-ff1ff136fb5632a44d1b/5ff07a69-c553-43be-98a1-b91f1ceea7de/">Manager</a><br>
-<a href="http://127.0.0.1:8000/manager_complete/">Manager Complete</a><br>
-<a href="http://127.0.0.1:8000/employee_complete/">Employee Complete</a><br>
-</div>
--->
 </body>
 </html>

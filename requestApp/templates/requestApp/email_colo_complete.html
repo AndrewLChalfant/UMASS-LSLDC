@@ -1,8 +1,9 @@
 {% autoescape off %}
 Hello {{ user.name }},
 
-You request for the LSLDC Colo area has been approved. Your UID now has access to the building. 
+Your request for the LSLDC Colo area has been approved. Your UCard now has access to the building. 
 
-Thank you,
-{{ user.tracker }}
+
+Reference tracking number: {{ user.tracker }}
+This is an automated message - please do not reply directly to this Email.
 {% endautoescape %}

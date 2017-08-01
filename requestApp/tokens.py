@@ -1,11 +1,8 @@
-#CURRENTLY NOT FUNCTIONING
-#CURRENTLY NOT FUNCTIONING
-#CURRENTLY NOT FUNCTIONING
-#CURRENTLY NOT FUNCTIONING
-
+#CREATE UNIQUE TOKENS TO ALLOW SECURE INDIVIDUAL EMAIL CONFIRMATION
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.utils import six
 
+#USES RESET TOKEN SYSTEM
 class AccountActivationTokenGenerator(PasswordResetTokenGenerator):
     def _make_hash_value(self, COLOUser, timestamp):
         return (

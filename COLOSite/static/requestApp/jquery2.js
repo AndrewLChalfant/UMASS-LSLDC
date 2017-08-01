@@ -1,7 +1,6 @@
 $(document).ready(function() {
-  //EXPORT PENDING USERS TO EXCEL SPREADSHEET
+	//EXPORT PENDING USERS TO EXCEL SPREADSHEET
   $("#btnExport").click(function(e) {
-    alert("Hello! I am an alert box!!");
     e.preventDefault();
 
     //getting data from our table
@@ -17,7 +16,6 @@ $(document).ready(function() {
   
   //EXPORT APPROVED USERS TO EXCEL SPREADSHEET - ERRORS FORMATTING
   $("#btnExportApproved").click(function(e) {
-    alert("Hello! I am an alert box!!");
     e.preventDefault();
 
     //getting data from our table
@@ -30,5 +28,4 @@ $(document).ready(function() {
     a.download = 'LSLDC COLO Approved' + '.xls';
     a.click();
   });  
-
 });
