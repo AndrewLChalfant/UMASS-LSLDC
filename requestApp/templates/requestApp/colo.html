@@ -1,15 +1,14 @@
-{% load static %}
-{% csrf_token %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>LSLDC COLO Access Request App | UMass Amherst</title>
-	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="{% static "requestApp/jquery2.js" %}"></script>
-	<!-- SCRIPT FOR RETURN TO TOP BUTTON -->
-	<script>
+<title>LSLDC COLO Access Request App | UMass Amherst</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
+<link rel="icon"  href="http://www.umass.edu/favicon.ico" type="image/x-icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="{% static "requestApp/jquery2.js" %}"></script>
+<!-- SCRIPT FOR RETURN TO TOP BUTTON -->
+<script>
 	// When the user scrolls down 700px from the top of the document, show the button
 	window.onscroll = function(){scrollFunction()};
 
@@ -26,14 +25,15 @@
     	document.documentElement.scrollTop = 0;
 	}
 </script>
-	<style>
+<style>
 input {
 	float: left;
 	padding-left: 20px;
 	width: 75%;
-	height: 35px;
+	height: 25px;
 }
-	/* STYLE FOR RETURN TO TOP BOTTOM */	
+
+/* STYLE FOR RETURN TO TOP BOTTOM */	
 #myBtn {
   display: none;
   position: fixed;
@@ -54,25 +54,26 @@ input {
 	box-shadow:1px 10px 60px #232323;
  }
 </style>
+{% load static %}
 </head>
+
 
 <body>
 <div class="data" id="data">
-<h1> UMass Amherst </h1>
-<h1> LSLDC COLO Request Control Pannel</h1>
+<h1> UMass Amherst LSLDC COLO Request Control Panel</h1>
 
 <!-- HEADER FOR COLO MANAGER OPTIONS -->
 <center>
+<h3>{{ new_requests | length }} new request(s). To date there have been {{ requests | length }} total requests. </h3>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Return to Top</button>
 <button id="btnExport" class="button button3"> Export Pending Requests to Excel </button>
 <button id="btnExportApproved" class="button button3"> Export Approved Requests to Excel </button>
-<h3>{{ new_requests | length }} new request(s). To date there have been {{ requests | length }} total requests. </h3>
 </center>
 
 <hr>
 <h1> LSLDC COLO Pending Requests</h1>
 <!-- DISPLAY TABLE WITH DATABASE PENDING USERS -->
-<div id= "table">
+<div id= "table" style="overflow-x:auto;">
 {% if new_requests %}
 	<table>
 	<tr>
@@ -122,7 +123,7 @@ input {
 <hr>
 <!-- DISPLAY TABLE WITH DATABASE APPROVED USERS -->
 <h1> LSLDC COLO Approved Requests</h1>
-	<div id="table2">
+	<div id="table" style="overflow-x:auto;">
 	{% if approved_requests %}
 	<table>
 	<tr>
@@ -136,9 +137,9 @@ input {
 		<th> Employee Department </th>
 		<th> Request Time </th>
 		<th> Tracking Number </th>
+		<th> Manager Approved </th>
 
 	{% for COLOUser in requests %}
-
 		{% if COLOUser.COLO_approved %}
 			<tr>
 			<td> {{ COLOUser.name }} </td>
@@ -151,6 +152,7 @@ input {
 			<td> {{ COLOUser.dep }} </td>
 			<td> {{ COLOUser.time }} </td>
 			<td> {{ COLOUser.tracker }} </td>
+			<td> {{ COLOUser.man_approved }}</td>
 		{% endif %}
 	{% endfor %}
 	</table>
@@ -163,7 +165,6 @@ input {
 <center><form method="post">
 {% csrf_token %}
 {{ form2.as_p }}
-<input type="hidden" name="form-type" value"remove"/>
 <button class="button button2" name= "remove" type="submit"> Remove</button></center>
 </form>
 </div>

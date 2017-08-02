@@ -5,22 +5,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 #COLO OPS MANAGER COMPLETE ACCESS
 class COLOApprovalForm(forms.Form):	
-	app_input= forms.CharField(label= '', required= True, widget=forms.TextInput(attrs={'placeholder': 'Please enter the tracking number of the request you wish to approve'}))
-	#CUSTOM VALIDATION--NOT WORKING
-	#def clean_app_input(self):
-	#	input= self.cleaned_data['app_input']
-	#	if len(input) < 35:
-		#	raise forms.ValidationError('Please enter a valid tracking number')
+	app_input= forms.CharField(min_length= 36, max_length= 36, label= '', required= True, widget=forms.TextInput(attrs={'placeholder': 'Please enter the tracking number of the request you wish to approve'}))
 
 #COLO OPS MANAGER REMOVE REQUEST
 class COLODeletionForm(forms.Form):	
-	del_input= forms.CharField(label= '', required= True, widget=forms.TextInput(attrs={'placeholder': 'Please enter the tracking number of the request you wish to delete'}))
-	
-    #CUSTOM VALIDATION--NOT WORKING
-	#def clean_del_input(self):
-	#	input= self.cleaned_data['del_input']
-		#if len(input) < 35:
-		#	raise forms.ValidationError('Please enter a valid tracking number')
+	del_input= forms.CharField(min_length= 36, max_length= 36, label= '', required= True, widget=forms.TextInput(attrs={'placeholder': 'Please enter the tracking number of the request you wish to delete'}))
 			            
 #FORM FOR MANAGER TO UPDATE EMPLOYEE IMPROVAL
 class ApprovalForm(forms.Form):
@@ -52,9 +41,9 @@ class PostForm(ModelForm):
 		id= self.cleaned_data['UCard_ID']
 		
 		#ENSURE FIRST AND LAST NAME
-		if len(name) < 4 or len(name) > 20:
+		if len(name) < 4:
 			raise forms.ValidationError('Please enter your first and last name')
-		if len(manager) < 4 or len(manager) > 20:
+		if len(manager) < 4:
 			raise forms.ValidationError('Please enter your first and last name')	
 			
 		#ENSURE .EDU EMAIL

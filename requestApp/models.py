@@ -31,13 +31,13 @@ class COLOUser(models.Model):
 	tracker= models.UUIDField(default= uuid.uuid4, primary_key= True, unique= True)
 	
 	#FIELDS EDITABLE BY USER
-	name= models.CharField('Employee Name', max_length=20)
-	email= models.EmailField('Employee Email', max_length=25)
+	name= models.CharField('Employee Name', max_length=30)
+	email= models.EmailField('Employee Email', max_length=40)
 	phone= models.PositiveIntegerField('Employee Phone Number')
-	reason= models.CharField('Reason for Request', max_length=20)
+	reason= models.CharField('Reason for Request', max_length=50)
 	UCard_ID= models.PositiveIntegerField()
-	manager= models.CharField('Manager Name', max_length=25)	
-	man_email= models.EmailField('Manager Email', max_length=20)
+	manager= models.CharField('Manager Name', max_length=30)	
+	man_email= models.EmailField('Manager Email', max_length=40)
 	DEPARTMENTS= (
 	('UMass Student', 'UMass Student'),
 	("President's Office", "President's Office"),

@@ -1,20 +1,16 @@
-{% load staticfiles %}
-{% csrf_token %}
-
-<!-- HOME PAGE FOR EMPLOYEE REQUESTS-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<title>LSLDC COLO Access Request App | UMass Amherst</title>
+	{% load staticfiles %}
 	<link rel="icon"  href="http://www.umass.edu/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
 <style>	
-
 /* UCARD HELP STYLE */
 .tooltip {
     position: absolute;
-    top: 280px;
+    top: 418px;
     margin-left: 90px;
     text-align: center;
     background-color: #C5C5C5;
@@ -114,7 +110,7 @@
 </form>
 
 <div class="tooltip">
-<p><image src="{% static 'requestApp/UCardSelected.png'%}" style="width:350px;height:200px;"></p>
+<p><image src="{% static 'requestApp/UCardSelected.png'%}" style="width:350px;height:200px;" alt='Sample UCard photo'></p>
 </div>
 </div>
 
