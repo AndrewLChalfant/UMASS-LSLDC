@@ -74,8 +74,8 @@ input {
 <h1> LSLDC COLO Pending Requests</h1>
 <!-- DISPLAY TABLE WITH DATABASE PENDING USERS -->
 <div id= "table" style="overflow-x:auto;">
-{% if new_requests %}
-	<table>
+	{% if new_requests %}
+	<table style="height 5px;">
 	<tr>
 		<th> Employee Name </th>
 		<th> Employee Email</th>
@@ -107,7 +107,7 @@ input {
 	{% endfor %}
 	</table>
 	{% else %}
-		<h2> No pending requests </h2>
+		<h2><i> No pending requests</i></h2>
 	{% endif %}
 <hr>
 </div>
@@ -123,7 +123,7 @@ input {
 <hr>
 <!-- DISPLAY TABLE WITH DATABASE APPROVED USERS -->
 <h1> LSLDC COLO Approved Requests</h1>
-	<div id="table" style="overflow-x:auto;">
+	<div id="table2" style="overflow-x:auto;">
 	{% if approved_requests %}
 	<table>
 	<tr>

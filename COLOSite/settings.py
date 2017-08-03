@@ -25,7 +25,7 @@ SECRET_KEY = 'z9%^x_-+_!g)^ui8^#1-#n+kn)@(f!tt4jc_$sl_hq_2$$2568'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'requestApp',
-    'jquery',
 ]
 
 MIDDLEWARE = [

@@ -44,11 +44,13 @@ class PostForm(ModelForm):
 		if len(name) < 4:
 			raise forms.ValidationError('Please enter your first and last name')
 		if len(manager) < 4:
-			raise forms.ValidationError('Please enter your first and last name')	
+			raise forms.ValidationError("Please enter your manager's first and last name")	
 			
 		#ENSURE .EDU EMAIL
-		if '.edu' not in email or '.edu' not in man_email:
-			raise forms.ValidationError('Please submit a valid UMass Email with an ".edu" extension')
+		if '.edu' not in email:
+			raise forms.ValidationError('Please submit a valid UMass Email with an ".edu" 	extension')
+		if '.edu' not in man_email:
+			raise forms.ValidationError('Please submit a valid UMass Manager Email with an ".edu" extension')
 			
 		#ENSURE VALID EMPLOYEE PHONE NUMBER
 		if phone > 19999999999 or phone < 100000000:

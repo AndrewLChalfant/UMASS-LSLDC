@@ -27,26 +27,23 @@ p {
 	color: #1B1B1B;
 }
 
+/* STYLE FOR DROP DOWNS */
 select {
-	width: 150px;
+	width: 155px;
 	border: 1px solid #A7A7A7;
 	background-color: white;
 	height: 25px;
 	float:right;
-	}
-	
-	
+	/*-webkit-appearance:none;*/
+}
+		
 input {
 	float: right;
 	width: 150px;
 	padding-right: 1px;
 	padding-top: 5px;
-	}
+}
 
-	
-input:focus {
-	}
-	
 a:link {
   color: #D6D6D6;
 }
@@ -64,13 +61,11 @@ a:active {
 }
 	
 div.footer {
-	padding-top: 5%;
 	text-align: center;
 	color: #D6D6D6;
-	font-size: 15px;
-	padding-bottom: 2%;
-	}
-
+	font-size: 13px;
+	padding-top: 20px;
+}
 			
 div.page {
 	background-color: #F3F3F3;
@@ -81,16 +76,19 @@ div.page {
     background-repeat: no-repeat;
     background-attachment: fixed;
 	margin: auto;
+	margin-top: 140px;
 	padding-left: 10px;
 	padding-right: 10px;
 	width: 400px;
+	height: 425px;
 	border-radius: 10px;
 	border: 2px solid black;
-	box-shadow:1px 50px 50px #5E0000;
-	}
-	div.page p {
+	box-shadow:1px 50px 50px #5E0000;	
+}
+
+div.page p {
 	padding-left: 15px;
-	}
+}
 	
 div.data {
 	background-color: #F3F3F3;
@@ -106,20 +104,19 @@ div.data {
 	border-radius: 10px;
 	border: 3px solid black;
 	box-shadow:1px 50px 50px #5E0000;
-
-	}
+}
 
 .button1 {
 	position: relative;
-	bottom: -5px;
+	bottom: -3px;
 	font-size: 20px;
-	border: 2px solid #F3F3F3;
+	border: 0px solid #F3F3F3;
 	border-radius: 5px;
 	width: 300px;
 	height: 50px;
 	background-color: #990000;
 	color: white;
-	}
+}
 	
 .button1:hover {
     background-color: #5E0000;
@@ -158,21 +155,28 @@ div.data {
 }
 
 div.table {
-    width: 100%;
+    width: 5%;
     margin: auto;
 }
 
 table, th, td {
+	overflow-x: auto;
     border: 1px solid black;
     border-collapse: collapse;
-    font-size: 10px;
+    font-size: 12px;
+    padding-left: 12px;
     background-color: white;
+}
+
+th {
+	background-color: #990000;
+	color:white;
 }
 
 th, td {
     padding: 2px;
     text-align: left;
-    }
+}
 
 /* LAZY WAY OF STYLING ERROR MESSAGES */
 ul {
@@ -191,5 +195,4 @@ ul {
 	background-color: #F3F3F3;
 	font-size: 20px;
 	padding-left:30px;
-
-	}
+}
