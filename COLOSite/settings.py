@@ -20,13 +20,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z9%^x_-+_!g)^ui8^#1-#n+kn)@(f!tt4jc_$sl_hq_2$$2568'
+#SECRET_KEY = 'z9%^x_-+_!g)^ui8^#1-#n+kn)@(f!tt4jc_$sl_hq_2$$2568'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','z9%^x_-+_!g)^ui8^#1-#n+kn)@(f!tt4jc_$sl_hq_2$$2568')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = [
+		'127.0.0.1',
+ 		'172.19.54.73',
+        'localhost',
+        'dj-1@www.umass.edu',
+        ]
 
 # Application definition
 
@@ -59,6 +64,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+            	'django.template.context_processors.request',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -124,3 +130,5 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 LOGIN_REDIRECT_URL= 'colo'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True

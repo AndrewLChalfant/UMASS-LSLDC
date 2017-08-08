@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>LSLDC COLO Access Request App | UMass Amherst</title>
 	{% load staticfiles %}
@@ -11,7 +10,7 @@
 .tooltip {
     transition: background 0.2s linear;
     position: absolute;
-    top: 378px;
+    top: 400px;
     margin-left: 90px;
     text-align: center;
     background-color: #C5C5C5;
@@ -100,24 +99,26 @@
 <body>
 <div class="page">
 <h1>UMass Amherst LSLDC COLO Access Request App</h1>
-
+<hr>
 <!-- EMPLOYEE SUBMISSION FIELDS -->
 <form action="" method="post">
 	{% csrf_token %}
 	{{ form.as_p }}
+	<hr>
 	<center><div class="form-actions">
 	<button class="button button1" type="submit"> Submit </button>
 	</div></center>
 </form>
-
 <div class="tooltip">
-<p><image src="{% static 'requestApp/UCardSelected.png'%}" style="width:350px;height:200px;" alt='Sample UCard photo'></p>
+<p><image src="{% static 'requestApp/UCardSelected.png'%}" style="width:350px;height:200px;" alt='Sample UCard photo'></p> 
 </div>
 </div>
 
 <div class="footer">
 This site is maintained by the <a href="http://www.it.umass.edu">UMass Amherst Information Technology</a>.<br/>
 Copyright &copy; <script>document.write( (new Date()).getFullYear() );</script>. University of Massachusetts Amherst. <a href="http://umass.edu/umhome/policies.html">Site Policies</a>
+
+<h1 style="color:white; font-size:40px;">LOCAL VERSION</h1>
 </div>
 
 </body>

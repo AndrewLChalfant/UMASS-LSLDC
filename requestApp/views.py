@@ -5,6 +5,7 @@ from django.db import models
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import render_to_string
+from django.template import RequestContext
 
 #IMPORT MODELS AND FORMS
 from requestApp.models import COLOUser

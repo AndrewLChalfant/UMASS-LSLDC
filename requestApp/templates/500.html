@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	{% load staticfiles %}
 	<title>LSLDC COLO Access Request App | UMass Amherst</title>
-	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
+	{% load staticfiles %}
 	<link rel="icon"  href="http://www.umass.edu/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="{% static 'requestApp/styles.css'%}">
 	<style>
 	div.page {
 		height: 300px;
-	}
+		}
 	</style>
 </head>
 
@@ -16,15 +17,14 @@
 <div class="page">
 <h1>UMass Amherst LSLDC COLO Access Request App</h1>
 <hr>
-<h1> Manager Request Complete </h1>
-
-<p><center>
-Your approval has been recorded. LSLDC has been notified of your request.
-</center></p>
-
-<h2> No further action is needed </h2>
+<!-- EMPLOYEE SUBMISSION FIELDS -->
+<h1> 500 - SERVER ERROR</h1>
+<p><b>There was an error at: </b>'{{ request.get_full_path }}'</p>
+<p>We couldn't find what you're looking for. Please visit the home page and try again. If you believe this is a bug, please notify it@umass.edu</p>
 </div>
+
 <h1 style="color:white; font-size:40px;">LOCAL VERSION</h1>
+</div>
 
 </body>
 </html>
