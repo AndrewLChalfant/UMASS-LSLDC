@@ -1,11 +1,8 @@
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail
 from django.db import models
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import render_to_string
-from django.template import RequestContext
 
 #IMPORT MODELS AND FORMS
 from requestApp.models import COLOUser
@@ -29,14 +26,11 @@ def home(request):
 			})
 							
 			#SEND EMAIL RECEIPT TO EMPLOYEE
-			try:
-				send_mail(
-					'LSLDC COLO Request Confirmation', 
-					employee_content,
-					'noReply@umass.edu',
-					[newUser.email])
-			except BadHeaderError:
-				return HttpResponse('ERROR')
+			send_mail(
+				'LSLDC COLO Request Confirmation', 
+				employee_content,
+				'noReply@umass.edu',
+				[newUser.email])
 			
 			#PASS EMPLOYEE FORM DATA TO BE COMPOSED AS EMAIL TO HTML OUTLINE
 			man_content= render_to_string('requestApp/email_employee_comp_to_manager.html', {
@@ -45,14 +39,11 @@ def home(request):
 			})
 
 			#SEND EMAIL TO EMPLOYEE MANAGER
-			try:
-				send_mail(
-					'LSLDC COLO Employee Request Notification', 
-					man_content,
-					'noReply@umass.edu',
-					[newUser.man_email],)
-			except BadHeaderError:
-				return HttpResponse('ERROR')
+			send_mail(
+				'LSLDC COLO Employee Request Notification', 
+				man_content,
+				'noReply@umass.edu',
+				[newUser.man_email],)
 			#REDIRECT TO COMPLETE PAGE
 			return render(request, 'requestApp/employee_complete.html', {'user': newUser})
 			

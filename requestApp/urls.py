@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf.urls import url, include, handler400, handler403, handler404, handler500
 from . import views 
-from django.views.generic import TemplateView
 
 #SITE URL MAPPINGS
 urlpatterns= [

@@ -101,8 +101,7 @@
 <h1>UMass Amherst LSLDC COLO Access Request App</h1>
 <hr>
 <!-- EMPLOYEE SUBMISSION FIELDS -->
-<form action="" method="post">
-	{% csrf_token %}
+<form action="" method="post">{% csrf_token %}
 	{{ form.as_p }}
 	<hr>
 	<center><div class="form-actions">
@@ -110,7 +109,7 @@
 	</div></center>
 </form>
 <div class="tooltip">
-<p><image src="{% static 'requestApp/UCardSelected.png'%}" style="width:350px;height:200px;" alt='Sample UCard photo'></p> 
+<p><image src="{% static 'requestApp/UCardSelected.png'%}" style="width:350px;height:200px;" alt='Sample UCard photo'>UMass UCards have an unique 8 digit identification number </p> 
 </div>
 </div>
 

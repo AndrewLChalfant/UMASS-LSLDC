@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','z9%^x_-+_!g)^ui8^#1-#n+kn)@(f!tt4jc_$sl_hq_2$$2568')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
 		'127.0.0.1',
@@ -130,5 +130,24 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 LOGIN_REDIRECT_URL= 'colo'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+SERVER_EMAIL= 'django-error@email.com'
+
+#DEFAULT_FROM_EMAIL= 'chalfant@umass.edu'
+#EMAIL_HOST= 'mail.umass.edu'
+#EMAIL_HOST_USER= 'chalfant@umass.edu'
+#EMAIL_PASSWORD= 'password'
+#EMAIL_USE_TLS= True
+#EMAIL_PORT= 465
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+#Receive 500 Error Emails 
+ADMIN = (
+        ('Andrew Chalfant', 'chalfant@umass.edu'),
+)
+
+#Receive 404 Error Emails
+MANAGERS = (
+        ('Andrew Chalfant', 'chalfant@umass.edu'),
+)
+
+
