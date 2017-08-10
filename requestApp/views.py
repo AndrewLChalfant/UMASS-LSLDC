@@ -24,7 +24,7 @@ def home(request):
 			{
 				'user': newUser,
 			})
-							
+			logger.info("this is an error message!!")
 			#SEND EMAIL RECEIPT TO EMPLOYEE
 			send_mail(
 				'LSLDC COLO Request Confirmation', 

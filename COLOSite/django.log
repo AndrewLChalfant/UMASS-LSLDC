@@ -1,0 +1,469 @@
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/views.py", line 19, in home
+    if form.is_valid():
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 183, in is_valid
+    return self.is_bound and not self.errors
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 175, in errors
+    self.full_clean()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 385, in full_clean
+    self._clean_form()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 412, in _clean_form
+    cleaned_data = self.clean()
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/forms.py", line 39, in clean
+    man_email= self.cleaned_data['man_email']
+KeyError: 'man_email'
+Exception while resolving variable 'request' in template '500.html'.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/views.py", line 19, in home
+    if form.is_valid():
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 183, in is_valid
+    return self.is_bound and not self.errors
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 175, in errors
+    self.full_clean()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 385, in full_clean
+    self._clean_form()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 412, in _clean_form
+    cleaned_data = self.clean()
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/forms.py", line 39, in clean
+    man_email= self.cleaned_data['man_email']
+KeyError: 'man_email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [request] in "[{'True': True, 'False': False, 'None': None}]"
+"POST / HTTP/1.1" 500 746
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/views.py", line 19, in home
+    if form.is_valid():
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 183, in is_valid
+    return self.is_bound and not self.errors
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 175, in errors
+    self.full_clean()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 385, in full_clean
+    self._clean_form()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 412, in _clean_form
+    cleaned_data = self.clean()
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/forms.py", line 39, in clean
+    man_email= self.cleaned_data['man_email']
+KeyError: 'man_email'
+Exception while resolving variable 'request' in template '500.html'.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/views.py", line 19, in home
+    if form.is_valid():
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 183, in is_valid
+    return self.is_bound and not self.errors
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 175, in errors
+    self.full_clean()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 385, in full_clean
+    self._clean_form()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/forms.py", line 412, in _clean_form
+    cleaned_data = self.clean()
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/forms.py", line 39, in clean
+    man_email= self.cleaned_data['man_email']
+KeyError: 'man_email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [request] in "[{'True': True, 'False': False, 'None': None}]"
+"POST / HTTP/1.1" 500 746
+"GET /colo/ HTTP/1.1" 200 14410
+Not Found: /colo/
+"POST /colo/ HTTP/1.1" 404 745
+Not Found: /colo/
+"POST /colo/ HTTP/1.1" 404 745
+Not Found: /colo/
+"POST /colo/ HTTP/1.1" 404 745
+Not Found: /colo/
+"POST /colo/ HTTP/1.1" 404 745
+"GET /colo/ HTTP/1.1" 200 14410
+Not Found: /colo/
+"POST /colo/ HTTP/1.1" 404 745
+Not Found: /colo/
+"POST /colo/ HTTP/1.1" 404 745
+INFO "GET /colo/ HTTP/1.1" 200 14410
+WARNING Not Found: /colo/
+WARNING "POST /colo/ HTTP/1.1" 404 745
+WARNING Not Found: /colo/
+WARNING "POST /colo/ HTTP/1.1" 404 745
+"GET /colo/ HTTP/1.1" 200 14410
+Not Found: /colo/
+"POST /colo/ HTTP/1.1" 404 745
+Internal Server Error: /colo/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2396, in to_python
+    return uuid.UUID(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/uuid.py", line 140, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/views.py", line 132, in COLO
+    user= get_object_or_404(COLOUser, pk= uuid4).delete()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 374, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 863, in execute_sql
+    sql, params = self.as_sql()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 420, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/where.py", line 79, in as_sql
+    sql, params = compiler.compile(child)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 170, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 103, in process_rhs
+    return self.get_db_prep_lookup(value, connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 196, in get_db_prep_lookup
+    [get_db_prep_value(value, connection, prepared=True)]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2387, in get_db_prep_value
+    value = self.to_python(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2401, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ["'dsadsadsadsadsadsadsadsadsadsad3e56d' is not a valid UUID."]
+Exception while resolving variable 'request' in template '500.html'.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2396, in to_python
+    return uuid.UUID(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/uuid.py", line 140, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/views.py", line 132, in COLO
+    user= get_object_or_404(COLOUser, pk= uuid4).delete()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 374, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 863, in execute_sql
+    sql, params = self.as_sql()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 420, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/where.py", line 79, in as_sql
+    sql, params = compiler.compile(child)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 170, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 103, in process_rhs
+    return self.get_db_prep_lookup(value, connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 196, in get_db_prep_lookup
+    [get_db_prep_value(value, connection, prepared=True)]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2387, in get_db_prep_value
+    value = self.to_python(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2401, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ["'dsadsadsadsadsadsadsadsadsadsad3e56d' is not a valid UUID."]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [request] in "[{'True': True, 'False': False, 'None': None}]"
+"POST /colo/ HTTP/1.1" 500 746
+Exception while resolving variable 'request' in template '500.html'.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2396, in to_python
+    return uuid.UUID(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/uuid.py", line 140, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/views.py", line 132, in COLO
+    user= get_object_or_404(COLOUser, pk= uuid4).delete()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 374, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 863, in execute_sql
+    sql, params = self.as_sql()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 420, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/where.py", line 79, in as_sql
+    sql, params = compiler.compile(child)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 170, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 103, in process_rhs
+    return self.get_db_prep_lookup(value, connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 196, in get_db_prep_lookup
+    [get_db_prep_value(value, connection, prepared=True)]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2387, in get_db_prep_value
+    value = self.to_python(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2401, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ["'dsadsadsadsadsadsadsadsadsadsad3e56d' is not a valid UUID."]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [request] in "[{'True': True, 'False': False, 'None': None}]"
+"POST /colo/ HTTP/1.1" 500 746
+Exception while resolving variable 'request' in template '500.html'.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2396, in to_python
+    return uuid.UUID(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/uuid.py", line 140, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/chalfant/Desktop/site/COLOSite/requestApp/views.py", line 132, in COLO
+    user= get_object_or_404(COLOUser, pk= uuid4).delete()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 374, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 863, in execute_sql
+    sql, params = self.as_sql()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 420, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/where.py", line 79, in as_sql
+    sql, params = compiler.compile(child)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 170, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 103, in process_rhs
+    return self.get_db_prep_lookup(value, connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/lookups.py", line 196, in get_db_prep_lookup
+    [get_db_prep_value(value, connection, prepared=True)]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2387, in get_db_prep_value
+    value = self.to_python(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 2401, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ["'dsadsadsadsadsadsadsadsadsadsad3e56d' is not a valid UUID."]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [request] in "[{'True': True, 'False': False, 'None': None}]"
+"POST /colo/ HTTP/1.1" 500 746
+WARNING "POST /colo/ HTTP/1.1" 404 745 2017-08-10 11:12:15,179
+INFO "GET /colo/ HTTP/1.1" 200 14410 2017-08-10 11:12:45,663
+WARNING "POST /colo/ HTTP/1.1" 404 745 2017-08-10 11:13:30,044
+WARNING "POST /colo/ HTTP/1.1" 404 745 2017-08-10 11:13:43,261
+"POST /colo/ HTTP/1.1" 404 745
+"POST /colo/ HTTP/1.1" 404 745
+WARNING "POST /colo/ HTTP/1.1" 404 745 2017-08-10 11:16:00,022
+WARNING "POST /colo/ HTTP/1.1" 404 745 2017-08-10 11:17:05,282

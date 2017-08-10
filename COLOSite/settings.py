@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','z9%^x_-+_!g)^ui8^#1-#n+kn)@(f!tt4jc_$sl_hq_2$$2568')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
 		'127.0.0.1',
@@ -130,7 +130,7 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 LOGIN_REDIRECT_URL= 'colo'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-SERVER_EMAIL= 'django-error@email.com'
+SERVER_EMAIL= 'django-error@umass.edu'
 
 #DEFAULT_FROM_EMAIL= 'chalfant@umass.edu'
 #EMAIL_HOST= 'mail.umass.edu'
@@ -150,4 +150,51 @@ MANAGERS = (
         ('Andrew Chalfant', 'chalfant@umass.edu'),
 )
 
-
+#ERROR LOGGING
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+    	'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d 	%(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s %(asctime)s'
+        },
+    },
+    
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+        
+        #WRITE TO FILE
+    	'file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(PROJECT_DIR, 'django.log'),
+            'formatter': 'simple',
+    	},
+    	
+    	#MAIL ADMINS
+    	'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+        },
+    },
+    
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+        },
+        
+        #ERROR LEVEL ISSUES MAIL ADMIN
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+    },
+}
