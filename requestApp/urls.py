@@ -4,7 +4,7 @@ from . import views
 
 #SITE URL MAPPINGS
 urlpatterns= [
-    url(r'^$', views.home, name='home'),
+    url(r'^LSLDC/$', views.home, name='home'),
     url(r'^employee_complete/$', views.complete, name='complete'),
 	url(r'^manager_complete/$', views.manager_complete, name='manager_approved'),
     url(r'^colo/$', views.COLO, name= 'colo'),

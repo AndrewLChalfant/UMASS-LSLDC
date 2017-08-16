@@ -24,7 +24,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','z9%^x_-+_!g)^ui8^#1-#n+kn)@(f!tt4jc_$sl_hq_2$$2568')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+# DEBUG= False
+# SECURE_SSL_REDIRECT= True 
+# X_FRAME_OPTIONS= 'DENY'
+# SECURE_BROWSER_XSS_FILTER= True
+# SECURE_CONTENT_TYPE_NOSNIFF= True
+# CSRF_COOKIE_SECURE= True 
+# SESSION_COOKIE_SECURE= True
+# CSRF_COOKIE_HTTPONLY= True
+# SECURE_HSTS_SECONDS = 3600
+# SECURE_HSTS_INCLUDE_SUBDOMAINS= True
 
 ALLOWED_HOSTS = [
 		'127.0.0.1',

@@ -40,6 +40,7 @@ class COLOUser(models.Model):
 	man_email= models.EmailField('Manager Email', max_length=40)
 	DEPARTMENTS= (
 	('UMass Student', 'UMass Student'),
+	('UMass Staff', 'UMass Staff'),
 	("President's Office", "President's Office"),
 	("Medical School", "Medical School"),
 	('Other', 'Other'),

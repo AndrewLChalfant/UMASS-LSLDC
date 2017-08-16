@@ -52,9 +52,9 @@ class PostForm(ModelForm):
 		if '.edu' not in man_email:
 			raise forms.ValidationError('Please submit a valid UMass Manager Email with an ".edu" extension')
 			
-		#ENSURE VALID EMPLOYEE PHONE NUMBER
+		#ENSURE VALID EMPLOYEE PHONE NUMBER - works if field is IntegerField - switched
 		if phone > 19999999999 or phone < 100000000:
-			raise forms.ValidationError('Please submit a valid 10 digit phone number')
+			raise forms.ValidationError('Please submit a valid 10 digit phone number with no dashes')
 		
 		#ENSURE VALID UMASS ID	
 		if id > 99999999 or id < 1000000:
