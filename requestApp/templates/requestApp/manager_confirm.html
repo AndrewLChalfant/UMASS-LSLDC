@@ -8,7 +8,7 @@
 	<style>
 	div.page {
 		margin-top: 0px;
-		height: 525px;
+		height: 575px;
 	}
 	table, th, td {
 		padding-left: 20px;
@@ -43,11 +43,13 @@
 <div class='check'>
 <form action="" method="post">
 {% csrf_token %}
-{{ form.as_p }}
 </div>
 
 <div class="form-actions">
-<center><button class="button button1" type="submit"> Approve </button></center>
+<center><button class="button button1" name= 'approve' type="submit"> Approve </button>
+<br>
+<br>
+<button class="button button1" name= "remove" type="submit"> Deny </button></center>
 </div>
 <p> Please contact LSLDC@umass.edu if any of the above information is incorrect.</p>
 </div>

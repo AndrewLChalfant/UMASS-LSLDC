@@ -47,10 +47,16 @@ class PostForm(ModelForm):
 			raise forms.ValidationError("Please enter your manager's first and last name")	
 			
 		#ENSURE .EDU EMAIL
-		if '.edu' not in email:
-			raise forms.ValidationError('Please submit a valid UMass Email with an ".edu" 	extension')
-		if '.edu' not in man_email:
-			raise forms.ValidationError('Please submit a valid UMass Manager Email with an ".edu" extension')
+		if 'umass.edu' not in email: 
+			if 'umb.edu' not in email:
+				if 'umassp.edu' not in email:
+					raise forms.ValidationError('Please submit a valid UMass Email with an ".edu" 	extension')
+					
+		#ENSURE .EDU EMAIL
+		if 'umass.edu' not in man_email: 
+			if 'umb.edu' not in man_email:
+				if 'umassp.edu' not in man_email:
+					raise forms.ValidationError('Please submit a valid UMass Manager Email with an ".edu" 	extension')
 			
 		#ENSURE VALID EMPLOYEE PHONE NUMBER - works if field is IntegerField - switched
 		if phone > 19999999999 or phone < 100000000:

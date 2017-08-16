@@ -34,18 +34,21 @@ class COLOUser(models.Model):
 	name= models.CharField('Employee Name', max_length=30)
 	email= models.EmailField('Employee Email', max_length=40)
 	phone= models.PositiveIntegerField('Employee Phone Number')
-	reason= models.CharField('Reason for Request', max_length=50)
+	REASONS= (
+	('LSLDC Card Access', 'LSLDC Card Access'),
+	('COLO Area Access', 'COLO Area Access'),
+	)
+	reason= models.CharField('Reason for request', max_length=20, choices= REASONS, default='', )
 	UCard_ID= models.PositiveIntegerField()
 	manager= models.CharField('Manager Name', max_length=30)	
 	man_email= models.EmailField('Manager Email', max_length=40)
 	DEPARTMENTS= (
-	('UMass Student', 'UMass Student'),
-	('UMass Staff', 'UMass Staff'),
-	("President's Office", "President's Office"),
-	("Medical School", "Medical School"),
-	('Other', 'Other'),
+	('UMass Amherst', 'UMass Amherst'),
+	('UMass Boston', 'UMass Boston'),
+	("UMass President's Office", " UMass President's Office"),
+	("UMass Medical School", "UMass Medical School"),
 	)
-	dep= models.CharField('Department', max_length=20, choices= DEPARTMENTS, default='', )
+	dep= models.CharField('Campus', max_length=20, choices= DEPARTMENTS, default='', )
 	
 	def __str__(self):
 		return self.name

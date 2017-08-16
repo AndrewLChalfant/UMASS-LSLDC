@@ -59,43 +59,52 @@ def manager(request, uuid4, token):
 		form= ApprovalForm()
 		
 	else:
-		form= ApprovalForm(request.POST)
-		#hopefully approve
-		user.man_approved= 'True'
-		user.save()
-		manager_content= render_to_string('requestApp/email_manager_approved.html', {
-			'user': user,
-		})
-		colo_content= render_to_string('requestApp/email_colo_manager_new.html', {
-			'user': user,
+		if "approve" in request.POST:
+			form= ApprovalForm(request.POST)
+			#hopefully approve
+			user.man_approved= 'True'
+			user.save()
+			manager_content= render_to_string('requestApp/email_manager_approved.html', {
+				'user': user,
 			})
+			colo_content= render_to_string('requestApp/email_colo_manager_new.html', {
+				'user': user,
+				})
 			
-		#email script
-		try:
-			send_mail(
-			'Confirmation Employee LSLDC COLO Approval', 
-			manager_content,
-			'noReply@umass.edu',
-			['man_email'])
-		except BadHeaderError:
-			return HttpResponse('ERROR')
+			#email script
+			try:
+				send_mail(
+				'Confirmation Employee LSLDC COLO Approval', 
+				manager_content,
+				'noReply@umass.edu',
+				['man_email'])
+			except BadHeaderError:
+				return HttpResponse('ERROR')
 		
-		#email script
-		try:
-			send_mail(
-			'New LSLDC COLO Request', 
-			colo_content,
-			'noReply@umass.edu',
-			['colo@lsldc.umass.edu'])
-		except BadHeaderError:
-			return HttpResponse('ERROR')
+			#email script
+			try:
+				send_mail(
+				'New LSLDC COLO Request', 
+				colo_content,
+				'noReply@umass.edu',
+				['colo@lsldc.umass.edu'])
+			except BadHeaderError:
+				return HttpResponse('ERROR')
 			
-		return redirect('manager_approved')
+			return redirect('manager_approved')
+		
+		if "remove" in request.POST:
+			user.delete()
+			return redirect('manager_denied')
 	return render(request, 'requestApp/manager_confirm.html', {'form': form, 'user':user})
 	
 #PAGE TO CONFIRM MANAGER FORM COMPLETED
 def manager_complete(request):
 	return render(request, 'requestApp/manager_complete.html')
+
+#PAGE TO CONFIRM MANAGER FORM COMPLETED
+def manager_denied(request):
+	return render(request, 'requestApp/manager_denied.html')
 
 #LSLDC OPS MANAGER CONTROL PANNEL SITE
 def COLO(request):

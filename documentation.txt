@@ -1,0 +1,16 @@
+DOCUMENTATION UPDATED 8/16/17
+
+ISSUES:
+Downloading Excel Spreadsheet Data via the COLO portal will not work in Firefox
+Invalid emails will result in a 500 Error
+
+BASIC:
+The files used in the LSLDC COLO Request App Site can be found on dj-1.www.umass.edu in the directory /var/www/html/COLOSite. 
+
+This folder contains most noticeably:
+‘colo_env’ - a folder holding the Django virtual environment settings
+‘COLOSite’ - a folder holding the settings for the whole site, in which the requestApp lives
+‘requestApp’ - a folder holding the app settings 
+
+Individual pages are served by requestApp/views.py which provides Django functionality and serves the HTML CSS templates found in requestApp/static
+
