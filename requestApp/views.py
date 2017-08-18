@@ -3,6 +3,7 @@ from django.db import models
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import render_to_string
+from smtplib import SMTPException
 
 #IMPORT MODELS AND FORMS
 from requestApp.models import COLOUser
@@ -58,8 +59,7 @@ def manager(request, uuid4, token):
         user= get_object_or_404(COLOUser, pk= uuid4)
         #IF MANAGER HAS APPROVED USER REQUEST
         if "approve" in request.POST:
-        #UPDATE MODEL FIELDS
-            form= ApprovalForm(request.POST)
+        	#UPDATE MODEL FIELDS
             user.man_approved= 'True'
             user.save()
             manager_content= render_to_string('requestApp/email_manager_approved.html', {
@@ -90,7 +90,7 @@ def manager(request, uuid4, token):
             user.delete()
             return redirect('manager_denied')
             
-        return render(request, 'requestApp/manager_confirm.html', {'form': form, 'user':user})
+        return render(request, 'requestApp/manager_confirm.html', {'user':user})
 
 #PAGE TO CONFIRM MANAGER FORM COMPLETED
 def manager_complete(request):

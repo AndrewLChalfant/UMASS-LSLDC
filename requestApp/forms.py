@@ -65,4 +65,7 @@ class PostForm(ModelForm):
 		#ENSURE VALID UMASS ID	
 		if id > 99999999 or id < 1000000:
 			raise forms.ValidationError('Please submit a valid 8 digit UMass ID number')
-
+			
+		#ENSURE DIFFERENT EMAILS
+		if man_email == email:
+			raise forms.ValidationError('Please ensure employee and manager email addresses are different')

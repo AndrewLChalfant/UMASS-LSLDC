@@ -10,7 +10,7 @@ Python 3.4.2
 mod_wsgi 4.3.0
 
 
-CURRENT ISSUES:
+CURRENT BUGS:
 Downloading Excel Spreadsheet Data via the COLO portal will not work in Firefox
 Submitting invalid email addresses in any of the sites forms will result in a 500 Error
 
@@ -63,7 +63,7 @@ There are 6 different views, located in ‘requestApp/views.py’, which house t
 WORK FLOW;
 Requester: The requester will visit the home page, currently ‘dj-1.www.umass.edu/lsldc/‘ and enter their information in order to request access to the LSLDC. There are two hoverable tooltips on this home page. One next to ‘Employee Phone Number’ instructing the requester to enter their phone number as a integer without formatting and one next to ‘UCard ID’ which shows how to find an UCard ID. If any of the information entered is incorrect (e.g a 12 digit phone number) the site will raise a custom validation error and ask the requester to re-input their information. A list of the custom validators can be found in the ‘forms.py’ file. Upon valid submission of the form, the requester will receive a confirmation email with their confirmation number and instructions on how their request will proceed. A second email is sent to the requester’s manager.  
 
-Approving Manager: Upon valid requester submission, the requester’s manager will receive an email with information about the request and a link to a unique approval/removal page. Once at this page, manager’s will either confirm or deny the request and then be redirected to an approval or denial screen. Approving a request changes the model’s ‘man_approved’ field to TRUE and will send an email to LSLDC OPs informing them of the new request as well an email receipt to the requester’s manager. Denying a request will delete the model from the database. 
+Approving Manager: Upon valid requester submission, the requester’s manager will receive an email with information about the request and a link to a unique approval/removal page. Once at this page, manager’s will either confirm or deny the request and then be redirected to an approval or denial screen. Approving a request changes the request’s ‘man_approved’ field to TRUE and will send an email to LSLDC OPs informing them of the new request as well an email receipt to the requester’s manager. Denying a request will delete the request from the database. 
  
 LSLDC OPs: To login to the LSLDC Admin page, LSLDC OPs Managers will visit ‘dj-1.www.umass.edu/colo'. To approve requests, OPs managers will input the tracking number of a request and click the ‘Approve’ button. To remove requests, OPs managers will input the tracking number of a request and click the ‘Remove’ button. Removing requests is intended for old, incorrect, or incomplete requests. Removing a request will delete all information about the request from the database. Approving a request will change the mode’s ‘COLO_approved’ field to TRUE and will send an email to the requester notifying them of their confirmation and to Mark Harrison with the requester’s name and Card ID so may add them to the CCURE application. LSLDC OPs managers also have the option to export pending or approved requests to an excel spreadsheet.
 

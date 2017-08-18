@@ -35,8 +35,8 @@ class COLOUser(models.Model):
 	email= models.EmailField('Employee Email', max_length=40)
 	phone= models.PositiveIntegerField('Employee Phone Number')
 	REASONS= (
-	('LSLDC Card Access', 'LSLDC Card Access'),
 	('COLO Area Access', 'COLO Area Access'),
+	('LSLDC Card Access', 'LSLDC Card Access'),
 	)
 	reason= models.CharField('Reason for request', max_length=20, choices= REASONS, default='', )
 	UCard_ID= models.PositiveIntegerField()
