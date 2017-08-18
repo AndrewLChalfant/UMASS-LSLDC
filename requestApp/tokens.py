@@ -2,7 +2,7 @@
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.utils import six
 
-#USES RESET TOKEN SYSTEM
+#USES RESET TOKEN SYSTEM - ALWAYS UNIQUE
 class AccountActivationTokenGenerator(PasswordResetTokenGenerator):
     def _make_hash_value(self, COLOUser, timestamp):
         return (
